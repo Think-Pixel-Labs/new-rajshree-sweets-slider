@@ -1,38 +1,129 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
 .App {
   text-align: center;
+  background-color: #000;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* Lock orientation to portrait */
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  display: none;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: none;
 }
 
 .App-link {
-  color: #61dafb;
+  display: none;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  display: none;
+}
+
+.slider-container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.slide {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic slider styles */
+.slick-slider {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+
+.slick-list, 
+.slick-track {
+  height: 100vh;
+  background-color: #000;
+}
+
+.slick-slide {
+  background-color: #000;
+}
+
+.slick-slide > div {
+  height: 100vh;
+  background-color: #000;
+}
+
+/* Remove any transitions that might affect image display */
+.slick-slide {
+  transition: none;
+}
+
+/* Custom styling for slider dots */
+.slick-dots {
+  bottom: 20px;
+  z-index: 1;
+}
+
+.slick-dots li button:before {
+  color: white;
+  font-size: 12px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: white;
+}
+
+/* Custom styling for arrows */
+.slick-prev,
+.slick-next {
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 10px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 40px;
 }
