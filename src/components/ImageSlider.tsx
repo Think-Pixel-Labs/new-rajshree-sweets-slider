@@ -8,9 +8,10 @@ interface Image {
     alt: string;
 }
 
+// Import images directly
 const images: Image[] = [
-    { url: '/images/slide1.jpg', alt: 'Slide 1' },
-    { url: '/images/slide2.jpg', alt: 'Slide 2' },
+    { url: './images/slide1.jpg', alt: 'Slide 1' },
+    { url: './images/slide2.jpg', alt: 'Slide 2' }
 ];
 
 const ImageSlider: React.FC = () => {
@@ -35,12 +36,22 @@ const ImageSlider: React.FC = () => {
         variableWidth: false
     };
 
+    const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+        console.error('Image failed to load:', e.currentTarget.src);
+        // You can set a fallback image here if needed
+        // e.currentTarget.src = '/fallback-image.jpg';
+    };
+
     return (
         <div className="slider-container">
             <Slider {...settings}>
                 {images.map((image, index) => (
                     <div key={index} className="slide">
-                        <img src={image.url} alt={image.alt} />
+                        <img 
+                            src={image.url} 
+                            alt={image.alt} 
+                            onError={handleImageError}
+                        />
                     </div>
                 ))}
             </Slider>
