@@ -10,8 +10,8 @@ interface Image {
 
 // Import images directly
 const images: Image[] = [
-    { url: './images/slide1.jpg', alt: 'Slide 1' },
-    { url: './images/slide2.jpg', alt: 'Slide 2' }
+    { url: './images/slide1.webp', alt: 'Slide 1' },
+    { url: './images/slide2.webp', alt: 'Slide 2' }
 ];
 
 const ImageSlider: React.FC = () => {
@@ -19,11 +19,11 @@ const ImageSlider: React.FC = () => {
         dots: false,
         arrows: false,
         infinite: true,
-        speed: 800,
+        speed: 2000,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 10000,
         vertical: true,
         verticalSwiping: false,
         fade: false,
